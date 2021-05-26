@@ -505,6 +505,8 @@ func GenerateWithMode(t reflect.Type, mode Mode, schema *Schema) (*Schema, error
 		if t.Elem().Kind() == reflect.Uint8 {
 			// Special case: `[]byte` should be a Base-64 string.
 			schema.Type = TypeString
+			// TODO: add content encoding back when updating to openAPI 3.1
+			// schema.ContentEncoding = "base64"
 		} else {
 			schema.Type = TypeArray
 			s, err := GenerateWithMode(t.Elem(), mode, nil)
