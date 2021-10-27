@@ -36,7 +36,7 @@ func RapiDocHandler(router *Router) http.Handler {
     show-header="false"
     primary-color="#f74799"
     nav-accent-color="#47afe8"
-	schema-description-expanded=true
+    schema-description-expanded=true
   > </rapi-doc>
 </body>
 </html>`, router.GetTitle(), router.OpenAPIPath())))
